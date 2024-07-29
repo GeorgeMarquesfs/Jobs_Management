@@ -17,13 +17,15 @@
 2. **Crie um ambiente virtual e ative-o:**
 
    *python -m venv venv*
-   *venv\Scripts\activate  #para IOS use: source venv/bin/activate*
+   
+   *venv\Scripts\activate* ~ Windows
+   *source venv/bin/activate* ~ IOS
 
-3. **Execute as migrações:**
+4. **Execute as migrações:**
    
    *python manage.py migrate*
 
-4. **Crie um superusuário (opcional, para acessar o admin):**
+5. **Crie um superusuário (opcional, para acessar o admin):**
 
    *python manage.py createsuperuser*
 
