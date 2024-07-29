@@ -19,6 +19,7 @@
    *python -m venv venv*
    
    *venv\Scripts\activate* ~ Windows
+   
    *source venv/bin/activate* ~ IOS
 
 4. **Execute as migrações:**
