@@ -87,6 +87,8 @@
 
 ![RelatorioCandidatosMesEAno](https://github.com/user-attachments/assets/57c9edbe-87c2-4061-bc46-8d9ac5ca3d66)
 
+** Para esta situação hipotética e de teste, eu modifiquei o mês no computador para criar vagas e me candidatar a vagas em meses diferentes.**
+
 ### Área Usuário
 
   * Na área do usuário / candidato, ele vera todas as vagas disponíveis
