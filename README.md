@@ -62,15 +62,19 @@
 
 ### Área da Empresa
 
-![Criar vaga](image-1.png)
+![CadastroVagas](https://github.com/user-attachments/assets/e3862699-2020-4997-a7b1-16d07eee9af4)
 
-![Lista de Vagas](image-2.png)
+![ListaVagasAtivas](https://github.com/user-attachments/assets/ff158090-dbe5-4236-882c-5e8294470316)
 
-![Candidados](image-3.png)
+![ListaCandidatosVagas](https://github.com/user-attachments/assets/5ac34fcb-7349-4d65-bf64-f378f72ce4cb)
+
+![RelatorioVagasPorMes](https://github.com/user-attachments/assets/f9c84952-6d89-4945-85a6-56c0f08f5251)
+
+![RelatorioCandidatosMesEAno](https://github.com/user-attachments/assets/57c9edbe-87c2-4061-bc46-8d9ac5ca3d66)
 
 ### Área Usuário
 
-![Lista de Vagas para se candidatar](image-4.png)
+![ListaVagasDisponiveis](https://github.com/user-attachments/assets/20015243-5105-49b2-96df-32eb6f143951)
 
-![Se candidatar a uma vaga](image-5.png)
+![CandidatarAVaga](https://github.com/user-attachments/assets/c873dd43-1954-4909-9f00-39fd2e1658ac)
 
