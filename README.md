@@ -1,5 +1,5 @@
 
-## Aplicação de Gerenciamento de Vagas de Emprego e Candidaturas
+# Aplicação de Gerenciamento de Vagas de Emprego e Candidaturas
 
 É uma aplicação para gerenciamento de vagas de emprego e candidaturas. O sistema permite que empresas publiquem vagas, candidatos se inscrevam, e empresas visualizem e avaliem as candidaturas com base em critérios pré-definidos.
 
