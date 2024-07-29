@@ -39,6 +39,23 @@ class Application(models.Model):
     def __str__(self):
         return f"{self.name} - {self.job_title}"
     
+    def normalize_education_level(level):
+        normalization_map = {
+            'ensino fundamental': 'fundamental',
+            'ensino médio': 'medio',
+            'tecnólogo': 'tecnologo',
+            'ensino superior': 'superior',
+            'pós / mba / mestrado': 'pos_mba_mestrado',
+            'doutorado': 'doutorado',
+            'fundamental': 'fundamental',
+            'medio': 'medio',
+            'tecnologo': 'tecnologo',
+            'superior': 'superior',
+            'pos mba mestrado': 'pos_mba_mestrado',
+            'doutorado': 'doutorado',
+        }
+        return normalization_map.get(level.strip().lower(), '')
+
     def calculate_score(self):
         score = 0
 
@@ -62,14 +79,13 @@ class Application(models.Model):
             'doutorado': 6,
         }
 
-        job_education_level = self.job.education_level
-        candidate_education_level = self.highest_education
+        job_education_level = Application.normalize_education_level(self.job.education_level)
+        candidate_education_level = Application.normalize_education_level(self.highest_education)
 
         if education_order.get(candidate_education_level, 0) >= education_order.get(job_education_level, 0):
             score += 1
 
         return score
-    
 
 
 

@@ -12,26 +12,26 @@
 
 1. **Clone o repositório:**
 
-   git clone [link do repositorio...]
+   *git clone [link do repositorio...]*
 
 2. **Crie um ambiente virtual e ative-o:**
 
-   python -m venv venv
-   venv\Scripts\activate  #para IOS use: source venv/bin/activate
+   *python -m venv venv*
+   *venv\Scripts\activate  #para IOS use: source venv/bin/activate*
 
 3. **Execute as migrações:**
    
-   python manage.py migrate
+   *python manage.py migrate*
 
 4. **Crie um superusuário (opcional, para acessar o admin):**
 
-   python manage.py createsuperuser
+   *python manage.py createsuperuser*
 
 ## Uso
 
 1. **Inicie o servidor de desenvolvimento:**
 
-   python manage.py runserver
+   *python manage.py runserver*
 
 2. **Acesse a aplicação no navegador:**
 
@@ -46,7 +46,7 @@
 
 1. **Para rodar os testes automatizados:**
 
-   python manage.py test
+   *python manage.py test*
 
    * Os testes garantirão que a aplicação está funcionando conforme o esperado. Certifique-se de que todas as dependências de teste estão instaladas.
 
@@ -58,7 +58,7 @@
 
 ### Página Login 
 
-![Pagina login](testJobConvo\static\prints\login.png)
+![login](https://github.com/user-attachments/assets/59ae4d87-f1a2-44f2-b358-1f866a38bee8)
 
 ### Área da Empresa
 
