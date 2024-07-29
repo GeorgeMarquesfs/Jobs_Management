@@ -51,7 +51,7 @@
 
    *python manage.py test*
 
-   * Os testes garantirão que a aplicação está funcionando conforme o esperado. Certifique-se de que todas as dependências de teste estão instaladas.
+* Os testes garantirão que a aplicação está funcionando conforme o esperado. Certifique-se de que todas as dependências de teste estão instaladas.
 
 
 
