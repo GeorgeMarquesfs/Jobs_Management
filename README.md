@@ -65,9 +65,11 @@
 ### Área da Empresa
 
   * A empresa pode cadastrar novas vagas:
+    
 ![CadastroVagas](https://github.com/user-attachments/assets/e3862699-2020-4997-a7b1-16d07eee9af4)
 
   * Ao fazer o cadastro de uma nova vaga, mostrará uma lista de todas as vagas que estao ativas, a empresa pode editar ou até mesmo excluir a vaga.
+    
 ![ListaVagasAtivas](https://github.com/user-attachments/assets/ff158090-dbe5-4236-882c-5e8294470316)
 
   * Ao clicar em "Ver Candidatos (i)", irá visualizar todos os candidatos a vaga com as suas respectivas informações (Pretensão salarial, Experiência, Última Escolaridade)
