@@ -65,7 +65,6 @@ def view_applicants(request, job_id):
 def job_report(request):
     current_year = timezone.now().year
 
-    
     jobs_by_month = (
         JobPosting.objects.annotate(month=ExtractMonth('created_at'))
         .values('month')

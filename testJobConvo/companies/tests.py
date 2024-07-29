@@ -4,7 +4,6 @@ from users.models import JobPosting, Application
 class ApplicationModelTest(TestCase):
 
     def setUp(self):
-        # Cria uma vaga e uma aplicação
         self.job = JobPosting.objects.create(
             title='Desenvolvedor Python',
             salary_range='2000_to_3000',

@@ -6,7 +6,6 @@ class ViewApplicantsTest(TestCase):
 
     def setUp(self):
         
-        # Cria uma vaga e algumas aplicações
         self.job = JobPosting.objects.create(
             title='Desenvolvedor Python',
             salary_range='2000_to_3000',

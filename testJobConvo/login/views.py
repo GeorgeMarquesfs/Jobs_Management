@@ -7,7 +7,6 @@ def login_page(request):
         email = request.POST['email']
         senha = request.POST['senha']
         
-        # Aqui você pode usar um método para autenticar o usuário
         user = authenticate(request, username=email, password=senha)
         
         if user is not None:
