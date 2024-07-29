@@ -1,3 +1,6 @@
+
+## Aplicação de Gerenciamento de Vagas de Emprego e Candidaturas
+
 É uma aplicação para gerenciamento de vagas de emprego e candidaturas. O sistema permite que empresas publiquem vagas, candidatos se inscrevam, e empresas visualizem e avaliem as candidaturas com base em critérios pré-definidos.
 
 ## Índice
@@ -21,6 +24,10 @@
    *venv\Scripts\activate* ~ Windows
    
    *source venv/bin/activate* ~ IOS
+   
+3. **Caso você não tenha o Django instalado, instale-o utilizando pip:**
+
+    *pip install django*
 
 4. **Execute as migrações:**
    
