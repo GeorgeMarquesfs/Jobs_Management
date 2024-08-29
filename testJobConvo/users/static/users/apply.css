@@ -1,0 +1,101 @@
+/* Estilos gerais */
+body {
+   font-family: Arial, sans-serif;
+   background: #f4f4f9;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100vh;
+   color: #333;
+}
+
+h1 {
+   margin: 20px 0;
+   font-size: 36px;
+   color: rgb(132, 99, 169);
+}
+
+.container {
+   width: 90%;
+   max-width: 600px;
+   margin: 20px auto;
+   padding: 20px;
+   background: #ffffff;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulário */
+form {
+   display: flex;
+   flex-direction: column;
+}
+
+form p {
+   margin: 0 0 15px;
+   font-size: 16px;
+}
+
+label {
+   font-weight: bold;
+   color: #555;
+}
+
+input[type="text"],
+textarea,
+select {
+   border: 1px solid #dcdcdc;
+   border-radius: 5px;
+   padding: 10px;
+   margin-bottom: 15px;
+   outline: none;
+   transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+   border-color: rgb(132, 99, 169);
+}
+
+/* Botão enviar candidatura */
+button[type="submit"] {
+   background-color: rgb(132, 99, 169);
+   border: none;
+   border-radius: 5px;
+   color: white;
+   padding: 10px;
+   cursor: pointer;
+   font-size: 16px;
+   transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+   background-color: rgb(81, 168, 177);
+}
+
+/* Botão cancelar */
+button[type="button"] {
+   background-color: #e0e0e0;
+   border: none;
+   border-radius: 5px;
+   color: #333;
+   padding: 10px;
+   cursor: pointer;
+   font-size: 16px;
+   transition: background-color 0.3s ease;
+   margin-top: 10px;
+}
+
+button[type="button"]:hover {
+   background-color: #d0d0d0;
+}
+
+/* Estilos para o container de botões */
+.button-container {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 20px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usuário</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/users.css' %}">
+</head>
+<body>
+    <h1>Olá usuário</h1>
+    
+    <div class="container">
+        <h2>Lista de Vagas Disponíveis</h2>
+        <div class="job-list">
+            {% for job in job_postings %}
+                <div class="job-card">
+                    <strong class="job-title">{{ job.title }}</strong>
+                    <p class="job-detail"><span class="label">Faixa salarial:</span> {{ job.get_salary_range_display }}</p>
+                    <p class="job-detail"><span class="label">Requisitos:</span> {{ job.requirements }}</p>
+                    <p class="job-detail"><span class="label">Escolaridade mínima:</span> {{ job.get_education_level_display }}</p>
+                    <a href="{% url 'apply_job' job.id %}" class="apply-button">Candidatar</a>
+                </div>
+            {% empty %}
+                <p>Nenhuma vaga disponível.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

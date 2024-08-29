@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candidatar-se</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/apply.css' %}">
+</head>
+<body>
+   <h1>Candidatar-se à Vaga: {{ job.title }}</h1>
+   
+   <div class="container">
+       <form method="post">
+           {% csrf_token %}
+           {{ form.as_p }}
+           
+           <div class="button-container">
+               <button type="submit" onclick="return confirm('Parabéns, você se candidatou a vaga!!');">Enviar Candidatura</button>
+               <a href="{% url 'users_home' %}">
+                   <button type="button">Cancelar</button>
+               </a>
+           </div>
+       </form>
+   </div>
+</body>
+</html>

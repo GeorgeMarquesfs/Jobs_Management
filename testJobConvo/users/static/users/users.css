@@ -1,0 +1,98 @@
+/* Estilos gerais */
+body {
+   font-family: Arial, sans-serif;
+   background: #f4f4f9;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100vh;
+}
+
+h1 {
+   color: #333;
+   margin: 20px 0;
+   font-size: 36px;
+}
+
+.container {
+   width: 90%;
+   max-width: 1200px;
+   margin: 20px auto;
+   padding: 20px;
+   background: #ffffff;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Lista de vagas */
+.job-list {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+}
+
+.job-card {
+   background: #ffffff;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   padding: 20px;
+   margin: 10px 0;
+   width: 100%;
+   max-width: 600px;
+   text-align: left;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.job-title {
+   font-size: 22px;
+   color: rgb(132, 99, 169);
+   margin-bottom: 10px;
+   font-weight: bold;
+}
+
+.job-detail {
+   margin: 10px 0;
+   color: #555;
+}
+
+.job-detail .label {
+   font-weight: bold;
+   color: rgb(81, 168, 177);
+}
+
+/* Botão de candidatar */
+.apply-button {
+   display: inline-block;
+   background-color: rgb(132, 99, 169);
+   color: white;
+   padding: 10px 15px;
+   border-radius: 5px;
+   text-decoration: none;
+   font-size: 16px;
+   font-weight: bold;
+   transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+   background-color: rgb(81, 168, 177);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+   .container {
+       width: 100%;
+       padding: 10px;
+   }
+
+   .job-card {
+       width: 100%;
+   }
+}

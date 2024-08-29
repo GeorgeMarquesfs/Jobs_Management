@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Vagas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'companies/job_report.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="chart-container">
+            <h1>Relatório de Vagas Criadas por Mês</h1>
+            <canvas id="jobsChart" width="300" height="80"></canvas>
+        </div>
+        <div class="chart-container">
+            <h1>Relatório de Candidatos Recebidos por Mês e por Vaga</h1>
+            <canvas id="applicationsChart" width="300" height="80"></canvas>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Primeiro gráfico: Vagas Criadas
+            var ctx1 = document.getElementById('jobsChart').getContext('2d');
+            var jobsChart = new Chart(ctx1, {
+                type: 'line',
+                data: {
+                    labels: {{ job_months|safe }},
+                    datasets: [{
+                        label: 'Vagas Criadas',
+                        data: {{ job_counts|safe }},
+                        borderColor: 'red',
+                        backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Dados para o gráfico de barras empilhadas
+            var applicationMonths = {{ application_months|safe }};
+            var jobTitles = {{ job_titles|safe }};
+            var applicationCounts = {{ application_counts|safe }};
+            
+            var datasets = [];
+            for (var i = 0; i < jobTitles.length; i++) {
+                var data = applicationCounts.map(function(monthData) {
+                    return monthData[i];
+                });
+                var color = 'rgba(' + ((i * 50) % 255) + ',' + ((i * 100) % 255) + ',' + ((i * 150) % 255) + ', 0.5)';
+                var borderColor = 'rgba(' + ((i * 50) % 255) + ',' + ((i * 100) % 255) + ',' + ((i * 150) % 255) + ', 1)';
+                datasets.push({
+                    label: jobTitles[i],
+                    data: data,
+                    backgroundColor: color,
+                    borderColor: borderColor,
+                    borderWidth: 1
+                });
+            }
+
+            // Segundo gráfico: Candidatos Recebidos (Stacked Bar Chart)
+            var ctx2 = document.getElementById('applicationsChart').getContext('2d');
+            var applicationsChart = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: applicationMonths,
+                    datasets: datasets
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Número de Candidatos Recebidos por Mês e por Vaga'
+                        }
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

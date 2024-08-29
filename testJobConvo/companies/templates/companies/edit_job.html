@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Vaga</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'companies/create_vaga.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Editar Vaga de Emprego</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="job_title">Nome da vaga:</label>
+            <input type="text" id="job_title" name="job_title" value="{{ job.title }}" required>
+            <br>
+
+            <label for="salary_range">Faixa salarial:</label>
+            <select id="salary_range" name="salary_range" required>
+                <option value="up_to_1000" {% if job.salary_range == 'up_to_1000' %}selected{% endif %}>Até 1.000</option>
+                <option value="1000_to_2000" {% if job.salary_range == '1000_to_2000' %}selected{% endif %}>De 1.000 a 2.000</option>
+                <option value="2000_to_3000" {% if job.salary_range == '2000_to_3000' %}selected{% endif %}>De 2.000 a 3.000</option>
+                <option value="above_3000" {% if job.salary_range == 'above_3000' %}selected{% endif %}>Acima de 3.000</option>
+            </select>
+            <br>
+
+            <label>Requisitos:</label>
+
+            <br>
+
+            <label for="education_level">Escolaridade mínima:</label>
+            <select id="education_level" name="education_level" required>
+                <option value="fundamental" {% if job.education_level == 'fundamental' %}selected{% endif %}>Ensino fundamental</option>
+                <option value="medio" {% if job.education_level == 'medio' %}selected{% endif %}>Ensino médio</option>
+                <option value="tecnologo" {% if job.education_level == 'tecnologo' %}selected{% endif %}>Tecnólogo</option>
+                <option value="superior" {% if job.education_level == 'superior' %}selected{% endif %}>Ensino Superior</option>
+                <option value="pos_mba_mestrado" {% if job.education_level == 'pos_mba_mestrado' %}selected{% endif %}>Pós / MBA / Mestrado</option>
+                <option value="doutorado" {% if job.education_level == 'doutorado' %}selected{% endif %}>Doutorado</option>
+            </select>
+            <br>
+
+            <button type="submit">Atualizar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Empresa</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'companies/create_vaga.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="left-side">
+        <h1>Olá empresa</h1>
+        
+        <div class="container">
+            <h2>Criar nova vaga de emprego</h2>
+            <form method="post">
+                {% csrf_token %}
+                <label for="job_title">Nome da vaga:</label>
+                <input type="text" id="job_title" name="job_title" required>
+                <br>
+
+                <label for="salary_range">Faixa salarial:</label>
+                <select id="salary_range" name="salary_range" required>
+                    <option value="up_to_1000">Até 1.000</option>
+                    <option value="1000_to_2000">De 1.000 a 2.000</option>
+                    <option value="2000_to_3000">De 2.000 a 3.000</option>
+                    <option value="above_3000">Acima de 3.000</option>
+                </select>
+                <br>
+
+                <label for="requirements">Requisitos:</label>
+                <br>
+
+                <label for="education_level">Escolaridade mínima:</label>
+                <select id="education_level" name="education_level" required>
+                    <option value="fundamental">Ensino fundamental</option>
+                    <option value="medio">Ensino médio</option>
+                    <option value="tecnologo">Tecnólogo</option>
+                    <option value="superior">Ensino Superior</option>
+                    <option value="pos_mba_mestrado">Pós / MBA / Mestrado</option>
+                    <option value="doutorado">Doutorado</option>
+                </select>
+                <br>
+
+                <button type="submit" onclick="return confirm('Você acabou de criar uma nova vaga!!');">Enviar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="middle-side">
+        <h2>Lista de Vagas Ativas</h2>
+        <button onclick="window.location.href='{% url 'job_report' %}'">Relatório</button>
+        <div class="job-list">
+            {% for job in job_postings %}
+                <br>
+                <div class="job-card">
+                    <strong class="job-title">{{ job.title }}</strong>
+                    <p class="job-detail"><span class="label">Faixa salarial:</span> {{ job.get_salary_range_display }}</p>
+                    <p class="job-detail"><span class="label">Requisitos:</span> {{ job.requirements }}</p>
+                    <p class="job-detail"><span class="label">Escolaridade mínima:</span> {{ job.get_education_level_display }}</p>
+                    <div class="job-actions">
+                        <a href="{% url 'edit_job' job.id %}" class="btn-edit">Editar</a>
+                        <a href="{% url 'delete_job' job.id %}" class="btn-delete" onclick="return confirm('Tem certeza de que deseja excluir esta vaga?');">Excluir</a>
+                    </div>
+                    <div class="job-applicants">
+                        <a href="{% url 'view_applicants' job.id %}">Ver Candidatos ({{ job.user_applications.count }})</a>
+                    </div>
+                </div>
+            {% empty %}
+                <p>Nenhuma vaga ativa.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
